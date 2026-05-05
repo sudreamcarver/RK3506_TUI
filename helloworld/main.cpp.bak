@@ -1,66 +1,83 @@
-#include <memory> // for shared_ptr, __shared_ptr_access
-#include <string> // for operator+, to_string
-
-#include "ftxui/component/app.hpp"            // for App
-#include "ftxui/component/captured_mouse.hpp" // for ftxui
-#include "ftxui/component/component.hpp" // for Button, Horizontal, Renderer
-#include "ftxui/component/component_base.hpp" // for ComponentBase
-#include "ftxui/dom/elements.hpp" // for separator, gauge, text, Element, operator|, vbox, border
-
-using namespace ftxui;
-
-// This is a helper function to create a button with a custom style.
-// The style is defined by a lambda function that takes an EntryState and
-// returns an Element.
-// We are using `center` to center the text inside the button, then `border` to
-// add a border around the button, and finally `flex` to make the button fill
-// the available space.
-ButtonOption
-Style ()
-{
-    auto option = ButtonOption::Animated ();
-    option.transform = [] (const EntryState &s) {
-        auto element = text (s.label);
-        if (s.focused)
-            {
-                element |= bold;
-            }
-        return element | center | borderEmpty | flex;
-    };
-    return option;
-}
+#include <ftxui/component/captured_mouse.hpp>
+#include <ftxui/component/component.hpp>
+#include <ftxui/component/screen_interactive.hpp>
+#include <ftxui/dom/elements.hpp>
 
 int
 main ()
 {
-    int value = 50;
+    using namespace ftxui;
 
-    // clang-format off
-  auto btn_dec_01 = Button("-1", [&] { value -= 1; }, Style());
-  auto btn_inc_01 = Button("+1", [&] { value += 1; }, Style());
-  auto btn_dec_10 = Button("-10", [&] { value -= 10; }, Style());
-  auto btn_inc_10 = Button("+10", [&] { value += 10; }, Style());
-    // clang-format on
+    auto screen = ScreenInteractive::Fullscreen ();
 
-    // The tree of components. This defines how to navigate using the keyboard.
-    // The selected `row` is shared to get a grid layout.
-    int row = 0;
-    auto buttons = Container::Vertical ({
-        Container::Horizontal ({ btn_dec_01, btn_inc_01 }, &row) | flex,
-        Container::Horizontal ({ btn_dec_10, btn_inc_10 }, &row) | flex,
-    });
+    auto renderer = Renderer (
+        [&]
+            {
+                auto left_top_window
+                    = window (text ("Left Top") | hcenter | bold,
+                              vbox ({
+                                  text ("这里是左上窗口"),
+                                  separator (),
+                                  text ("可以放状态信息"),
+                                  text ("例如：CPU / Memory / Device"),
+                              }) | flex,
+                              ROUNDED);
 
-    // Modify the way to render them on screen:
-    auto component = Renderer (buttons, [&] {
-        return vbox ({
-                   text ("value = " + std::to_string (value)),
-                   separator (),
-                   buttons->Render () | flex,
-               })
-               | flex | border;
-    });
+                auto left_bottom_window
+                    = window (text ("Left Bottom") | hcenter | bold,
+                              vbox ({
+                                  text ("这里是左下窗口"),
+                                  separator (),
+                                  text ("可以放日志、菜单或控制项"),
+                                  text ("Press q / Esc to quit"),
+                              }) | flex,
+                              ROUNDED);
 
-    auto screen = App::FitComponent ();
+                auto right_window = window (
+                    text ("Right Main Window") | hcenter | bold,
+                    vbox ({
+                        text ("这里是右侧大窗口"),
+                        separator (),
+                        paragraph (
+                            "This area can be used as the main view. "
+                            "For example: charts, device data, serial output, "
+                            "configuration table, or real-time monitoring "
+                            "panel."),
+                    }) | flex,
+                    ROUNDED);
+
+                auto left_panel = vbox ({
+                                      left_top_window | flex,
+                                      left_bottom_window | flex,
+                                  })
+                                  | size (WIDTH, EQUAL, 40);
+
+                auto main_layout = hbox ({
+                                       left_panel,
+                                       right_window | flex,
+                                   })
+                                   | flex;
+
+                auto outer_window = window (text (" My FTXUI TUI Dashboard ")
+                                                | hcenter | bold,
+                                            main_layout, ROUNDED);
+
+                return outer_window | flex;
+            });
+
+    auto component = CatchEvent (renderer,
+                                 [&] (Event event)
+                                     {
+                                         if (event == Event::Character ('q')
+                                             || event == Event::Escape)
+                                             {
+                                                 screen.ExitLoopClosure () ();
+                                                 return true;
+                                             }
+                                         return false;
+                                     });
+
     screen.Loop (component);
+
     return 0;
 }
