@@ -1,20 +1,79 @@
+#include <ftxui/component/captured_mouse.hpp>
+#include <ftxui/component/component.hpp>
+#include <ftxui/component/screen_interactive.hpp>
 #include <ftxui/dom/elements.hpp>
-#include <ftxui/screen/screen.hpp>
-#include <iostream>
+
+#include <string>
 
 int
 main ()
 {
     using namespace ftxui;
 
-    Element document = hbox ({
-        text ("left") | border,
-        text ("middle") | border | flex,
-        text ("right") | border,
+    auto screen = ScreenInteractive::Fullscreen ();
+
+    auto renderer = Renderer ([&] {
+        auto left_top_window
+            = window (text ("Left Top") | hcenter | bold,
+                      vbox ({
+                          text ("这里是左上窗口"),
+                          separator (),
+                          text ("可以放状态信息"),
+                          text ("例如：CPU / Memory / Device"),
+                      }) | flex,
+                      ROUNDED);
+
+        auto left_bottom_window
+            = window (text ("Left Bottom") | hcenter | bold,
+                      vbox ({
+                          text ("这里是左下窗口"),
+                          separator (),
+                          text ("可以放日志、菜单或控制项"),
+                          text ("Press q / Esc to quit"),
+                      }) | flex,
+                      ROUNDED);
+
+        auto right_window = window (
+            text ("Right Main Window") | hcenter | bold,
+            vbox ({
+                text ("这里是右侧大窗口"),
+                separator (),
+                paragraph (
+                    "This area can be used as the main view. "
+                    "For example: charts, device data, serial output, "
+                    "configuration table, or real-time monitoring panel."),
+            }) | flex,
+            ROUNDED);
+
+        auto left_panel = vbox ({
+                              left_top_window | flex,
+                              left_bottom_window | flex,
+                          })
+                          | size (WIDTH, EQUAL, 40);
+
+        auto main_layout = hbox ({
+                               left_panel,
+                               right_window | flex,
+                           })
+                           | flex;
+
+        auto outer_window
+            = window (text (" My FTXUI TUI Dashboard ") | hcenter | bold,
+                      main_layout, ROUNDED);
+
+        return outer_window | flex;
     });
 
-    auto screen
-        = Screen::Create (Dimension::Full (), Dimension::Fit (document));
-    Render (screen, document);
-    screen.Print ();
+    auto component = CatchEvent (renderer, [&] (Event event) {
+        if (event == Event::Character ('q') || event == Event::Escape)
+            {
+                screen.ExitLoopClosure () ();
+                return true;
+            }
+        return false;
+    });
+
+    screen.Loop (component);
+
+    return 0;
 }
