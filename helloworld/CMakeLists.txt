@@ -10,7 +10,7 @@ include(FetchContent)
 
 FetchContent_Declare(
     ftxui
-    SOURCE_DIR /home/carver/FTXUI
+    SOURCE_DIR /home/carver/Documents/FTXUI
 )
 
 FetchContent_MakeAvailable(ftxui)
