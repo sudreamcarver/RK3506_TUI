@@ -6,7 +6,7 @@
 // - 按 q 或 Esc 退出
 // -----------------------------------------------------------------------------
 
-#include "node_panel.hpp"
+#include "include/node_panel.hpp"
 
 #include <ftxui/component/component.hpp>
 #include <ftxui/component/screen_interactive.hpp>
@@ -27,14 +27,21 @@ main ()
         node_panel.Component (),
         [&]
             {
-                auto left_window = node_panel.RenderNodeListWindow ()
-                                   | size (WIDTH, EQUAL, 36);
+                auto left_up_window = node_panel.RenderNodeListWindow ()
+                                      | size (WIDTH, EQUAL, 36);
+
+                auto left_down_window = window (
+                    text ("node detail") | hcenter | bold,
+                    vbox ({ text (""), text ("") }) | size (WIDTH, EQUAL, 36));
 
                 auto right_window = node_panel.RenderDetailWindow () | flex;
 
-                auto main_layout = hbox ({ left_window, right_window }) | flex;
+                auto left_layout = vbox ({ left_up_window, left_down_window });
 
-                return window (text (" RK3506 Node Dashboard ") | hcenter | bold,
+                auto main_layout = hbox ({ left_layout, right_window }) | flex;
+
+                return window (text (" RK3506 Node Dashboard ") | hcenter
+                                   | bold,
                                main_layout, ROUNDED)
                        | flex;
             });

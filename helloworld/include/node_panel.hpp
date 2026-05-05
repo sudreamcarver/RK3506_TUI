@@ -1,63 +1,117 @@
 #ifndef NODE_PANEL_HPP
 #define NODE_PANEL_HPP
 
-// node_panel.hpp
+// node_panel.hpp (header-only)
 // -----------------------------------------------------------------------------
 // NodePanel 模块：
 // - 管理“节点列表 + 节点详情”的数据与渲染逻辑
-// - 对外提供一个可聚焦组件（Menu）用于键盘导航
-// - 提供两个窗口渲染函数：
-//   1) RenderNodeListWindow()   左侧节点列表窗口
-//   2) RenderDetailWindow()     右侧节点详情窗口
+// - 对外提供可聚焦组件（Menu）用于键盘导航
+// - 提供可扩展的节点注入接口，方便外部传感器/驱动层动态添加节点
 // -----------------------------------------------------------------------------
 
-// component_base.hpp：FTXUI 组件基类定义
 #include "ftxui/component/component_base.hpp"
-// component.hpp：Component / Menu 等组件接口
 #include <ftxui/component/component.hpp>
-// elements.hpp：Element / window / text / vbox / paragraph 等 DOM 元素
 #include <ftxui/dom/elements.hpp>
 
+#include <cstddef>
 #include <string>
 #include <vector>
 
-// 单个节点的数据模型。
-// name    : 列表中显示的节点名称
-// content : 详情区域显示的多行文本
 struct NodeInfo
 {
     std::string name;
     std::string content;
 };
 
-// NodePanel：封装节点 UI 的状态与行为。
 class NodePanel
 {
   public:
-    // 构造函数：初始化默认节点数据、菜单项与选中索引。
-    NodePanel ();
+    NodePanel ()
+    {
+        AddNode ("Motor",
+                 "电机节点\n\n状态: Online\n转速: 1200 RPM\n电流: 1.25 "
+                 "A\n温度: 42 C");
+        AddNode ("Radar",
+                 "雷达节点\n\n状态: Online\nIP: 192.168.1.10\n点云数量: "
+                 "2048\n刷新率: 10 Hz");
+        AddNode ("Camera",
+                 "相机节点\n\n状态: Offline\n分辨率: 1280x720\n帧率: 30 "
+                 "FPS\n曝光: Auto");
+        AddNode ("IMU",
+                 "IMU 节点\n\n状态: Online\nAccel: 0.01, 0.02, 9.80\nGyro: "
+                 "0.00, 0.01, 0.00");
+        AddNode ("GPS",
+                 "GPS 节点\n\n状态: Searching\nLatitude: --\nLongitude: "
+                 "--\nSatellite: 0");
+    }
 
-    // 返回内部菜单组件，供外层 Container/CatchEvent 接入焦点系统。
-    ftxui::Component Component ();
+    // 外部传感器/驱动层可调用这个接口，动态往列表中追加节点。
+    void
+    AddNode (const std::string &name, const std::string &content)
+    {
+        nodes_.push_back ({ name, content });
+        node_names_.push_back (name);
 
-    // 渲染“节点列表”窗口（通常放左侧）。
-    ftxui::Element RenderNodeListWindow ();
+        // 重新绑定菜单，保证新增节点后菜单项同步更新。
+        node_menu_ = ftxui::Menu (&node_names_, &selected_node_);
 
-    // 渲染“节点详情”窗口（通常放右侧）。
-    ftxui::Element RenderDetailWindow ();
+        // 防止选中索引越界。
+        if (selected_node_ >= static_cast<int> (nodes_.size ()))
+            {
+                selected_node_ = static_cast<int> (
+                    nodes_.empty () ? 0 : nodes_.size () - 1);
+            }
+    }
+
+    // 直接暴露只读访问，便于外部读取当前节点集合。
+    const std::vector<NodeInfo> &
+    Nodes () const
+    {
+        return nodes_;
+    }
+
+    ftxui::Component
+    Component ()
+    {
+        return node_menu_;
+    }
+
+    ftxui::Element
+    RenderNodeListWindow ()
+    {
+        using namespace ftxui;
+
+        return window (text ("Nodes") | hcenter | bold,
+                       node_menu_->Render () | flex, ROUNDED);
+    }
+
+    ftxui::Element
+    RenderDetailWindow ()
+    {
+        using namespace ftxui;
+
+        if (nodes_.empty ())
+            {
+                return window (text ("Node Detail") | hcenter | bold,
+                               paragraph ("No node available.") | flex,
+                               ROUNDED);
+            }
+
+        const auto &node
+            = nodes_.at (static_cast<std::size_t> (selected_node_));
+
+        return window (text ("Node Detail: " + node.name) | hcenter | bold,
+                       vbox ({
+                           paragraph (node.content),
+                       }) | flex,
+                       ROUNDED);
+    }
 
   private:
-    // 原始节点数据。
     std::vector<NodeInfo> nodes_;
-
-    // Menu 组件需要 string 列表，这里缓存节点名数组。
     std::vector<std::string> node_names_;
-
-    // 当前选中节点索引（与 Menu 绑定）。
     int selected_node_ = 0;
-
-    // FTXUI 菜单组件：负责上下移动、高亮、回车等交互。
-    ftxui::Component node_menu_;
+    ftxui::Component node_menu_ = ftxui::Menu (&node_names_, &selected_node_);
 };
 
 #endif
