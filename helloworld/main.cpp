@@ -27,9 +27,11 @@ main ()
         node_panel.Component (),
         [&]
             {
+                // 左上窗口
                 auto left_up_window = node_panel.RenderNodeListWindow ()
                                       | size (WIDTH, EQUAL, 36);
 
+                // 左下窗口
                 auto left_down_window = window (
                     text ("node detail") | hcenter | bold,
                     vbox ({ text (""), text ("") }) | size (WIDTH, EQUAL, 36));
