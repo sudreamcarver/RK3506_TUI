@@ -26,7 +26,6 @@ helloworld/
 ├── CMakeLists.txt
 ├── .gitignore
 ├── main.cpp
-├── node_panel.cpp
 ├── include/
 │   └── node_panel.hpp
 ├── cmake/
@@ -122,7 +121,7 @@ cmake --build build_x86 -j4
 
 ## 6. 已完成的近期改动总结
 
-1. 为 `node_panel.hpp` 和 `node_panel.cpp` 增加详细中文注释
+1. 为 header-only 的 `node_panel.hpp` 增加详细中文注释
 2. 将 `NodePanel` 成功接入 `main.cpp`
 3. 新增 `.gitignore`，忽略构建目录：
    - `build/`
