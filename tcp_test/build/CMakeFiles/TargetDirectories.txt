@@ -1,0 +1,3 @@
+/home/carver/RK3506_TUI/tcp_test/build/CMakeFiles/tcp_sensor_sender.dir
+/home/carver/RK3506_TUI/tcp_test/build/CMakeFiles/edit_cache.dir
+/home/carver/RK3506_TUI/tcp_test/build/CMakeFiles/rebuild_cache.dir

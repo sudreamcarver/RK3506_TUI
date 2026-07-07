@@ -21,12 +21,18 @@
 #include <ftxui/component/component.hpp>
 #include <ftxui/dom/elements.hpp>
 
+#include <algorithm>
+#include <cctype>
 #include <cstddef>
+#include <sstream>
 #include <string>
+#include <utility>
 #include <vector>
 
 struct NodeInfo
 {
+    std::string key;
+
     // 节点显示名：用于左侧节点列表，也用于右侧详情窗口标题。
     std::string name;
 
@@ -72,11 +78,11 @@ class NodePanel
     void
     AddNode (const std::string &name, const std::string &content)
     {
-        nodes_.push_back ({ name, content });
-        node_names_.push_back (name);
+        all_nodes_.push_back ({ name, name, content });
 
-        // 重新绑定菜单，保证新增节点后菜单项同步更新。
-        node_menu_ = ftxui::Menu (&node_names_, &selected_node_);
+        // node_menu_ 绑定的是 node_names_ 和 selected_node_ 的地址。
+        // 运行中更新节点时只改这两个对象本身，避免替换组件后 Renderer 仍持有旧组件。
+        ApplyFilter ();
 
         // 防止选中索引越界。当前 AddNode() 只会追加数据，正常不会越界；
         // 这里保留保护逻辑，便于未来扩展删除/清空节点时复用。
@@ -84,6 +90,67 @@ class NodePanel
             {
                 selected_node_ = static_cast<int> (
                     nodes_.empty () ? 0 : nodes_.size () - 1);
+            }
+    }
+
+    void
+    SetNodes (const std::vector<NodeInfo> &nodes)
+    {
+        all_nodes_ = nodes;
+        ApplyFilter ();
+    }
+
+    void
+    SetFilter (const std::string &filter)
+    {
+        if (filter_ == filter)
+            {
+                return;
+            }
+
+        filter_ = filter;
+        ApplyFilter ();
+    }
+
+    void
+    SetSearchActive (bool active)
+    {
+        search_active_ = active;
+    }
+
+    void
+    ClearFilter ()
+    {
+        filter_.clear ();
+        ApplyFilter ();
+    }
+
+    const std::string &
+    Filter () const
+    {
+        return filter_;
+    }
+
+    bool
+    SearchActive () const
+    {
+        return search_active_;
+    }
+
+    void
+    AppendFilterText (const std::string &text)
+    {
+        filter_ += text;
+        ApplyFilter ();
+    }
+
+    void
+    PopFilterChar ()
+    {
+        if (!filter_.empty ())
+            {
+                filter_.pop_back ();
+                ApplyFilter ();
             }
     }
 
@@ -95,6 +162,40 @@ class NodePanel
     Nodes () const
     {
         return nodes_;
+    }
+
+    const std::vector<NodeInfo> &
+    AllNodes () const
+    {
+        return all_nodes_;
+    }
+
+    std::string
+    SelectedKey () const
+    {
+        if (nodes_.empty ())
+            {
+                return "";
+            }
+
+        return nodes_.at (static_cast<std::size_t> (selected_node_)).key;
+    }
+
+    void
+    ClampSelectedNode ()
+    {
+        if (nodes_.empty ())
+            {
+                selected_node_ = 0;
+            }
+        else if (selected_node_ >= static_cast<int> (nodes_.size ()))
+            {
+                selected_node_ = static_cast<int> (nodes_.size () - 1U);
+            }
+        else if (selected_node_ < 0)
+            {
+                selected_node_ = 0;
+            }
     }
 
     // 返回左侧菜单组件。主界面需要把这个组件传给 Renderer()，FTXUI 才能把
@@ -114,8 +215,27 @@ class NodePanel
     {
         using namespace ftxui;
 
-        return window (text ("Nodes") | hcenter | bold,
-                       node_menu_->Render () | flex, ROUNDED);
+        const auto total = static_cast<int> (all_nodes_.size ());
+        const auto filtered = static_cast<int> (nodes_.size ());
+        const auto current = filtered == 0 ? 0 : selected_node_ + 1;
+        auto title = "Nodes " + std::to_string (current) + "/"
+                     + std::to_string (filtered);
+        if (filtered != total)
+            {
+                title += " of " + std::to_string (total);
+            }
+        if (search_active_ || !filter_.empty ())
+            {
+                title += " /" + filter_;
+                if (search_active_)
+                    {
+                        title += "_";
+                    }
+            }
+
+        return window (
+            text (title) | hcenter | bold,
+            node_menu_->Render () | frame | flex, ROUNDED);
     }
 
     // 渲染右侧节点详情窗口。
@@ -139,16 +259,243 @@ class NodePanel
         const auto &node = nodes_.at (
             static_cast<std::size_t> (selected_node_)); // 返回对应下标的内容
 
+        auto status = ExtractStatus (node.content);
+        auto metrics = ExtractMetrics (node.content);
+
         return window (text ("Node Detail: " + node.name) | hcenter | bold,
                        vbox ({
-                           paragraph (node.content),
+                           RenderSummary (node, status),
+                           separator (),
+                           RenderMetrics (metrics) | flex,
+                           separator (),
+                           text ("Raw Detail") | bold,
+                           paragraph (node.content) | dim,
                        }) | flex,
                        ROUNDED);
     }
 
   private:
-    // 节点真实数据源。每个元素包含节点名和详情文本。
+    static std::string
+    ToLower (std::string value)
+    {
+        std::transform (value.begin (),
+                        value.end (),
+                        value.begin (),
+                        [] (unsigned char character)
+                            {
+                                return static_cast<char> (
+                                    std::tolower (character));
+                            });
+        return value;
+    }
+
+    bool
+    MatchesFilter (const NodeInfo &node) const
+    {
+        if (filter_.empty ())
+            {
+                return true;
+            }
+
+        const auto filter = ToLower (filter_);
+        return ToLower (node.name).find (filter) != std::string::npos
+               || ToLower (node.content).find (filter) != std::string::npos;
+    }
+
+    void
+    ApplyFilter ()
+    {
+        nodes_.clear ();
+        node_names_.clear ();
+
+        for (const auto &node : all_nodes_)
+            {
+                if (MatchesFilter (node))
+                    {
+                        nodes_.push_back (node);
+                        node_names_.push_back (node.name);
+                    }
+            }
+
+        ClampSelectedNode ();
+    }
+
+    static std::string
+    Trim (const std::string &value)
+    {
+        const auto first = value.find_first_not_of (" \t\r\n");
+        if (first == std::string::npos)
+            {
+                return "";
+            }
+
+        const auto last = value.find_last_not_of (" \t\r\n");
+        return value.substr (first, last - first + 1U);
+    }
+
+    static std::vector<std::string>
+    SplitLines (const std::string &content)
+    {
+        std::vector<std::string> lines;
+        std::istringstream stream (content);
+        std::string line;
+
+        while (std::getline (stream, line))
+            {
+                lines.push_back (Trim (line));
+            }
+
+        return lines;
+    }
+
+    static std::string
+    ExtractStatus (const std::string &content)
+    {
+        for (const auto &line : SplitLines (content))
+            {
+                const auto separator_position = line.find (':');
+                if (separator_position == std::string::npos)
+                    {
+                        continue;
+                    }
+
+                const auto key = Trim (line.substr (0U, separator_position));
+                if (key == "状态" || key == "Status")
+                    {
+                        return Trim (line.substr (separator_position + 1U));
+                    }
+            }
+
+        return "Unknown";
+    }
+
+    static std::vector<std::pair<std::string, std::string>>
+    ExtractMetrics (const std::string &content)
+    {
+        std::vector<std::pair<std::string, std::string>> metrics;
+
+        for (const auto &line : SplitLines (content))
+            {
+                const auto separator_position = line.find (':');
+                if (separator_position == std::string::npos)
+                    {
+                        continue;
+                    }
+
+                auto key = Trim (line.substr (0U, separator_position));
+                auto value = Trim (line.substr (separator_position + 1U));
+                if (key.empty () || value.empty () || key == "状态"
+                    || key == "Status")
+                    {
+                        continue;
+                    }
+
+                metrics.push_back ({ key, value });
+            }
+
+        return metrics;
+    }
+
+    static ftxui::Element
+    RenderSummary (const NodeInfo &node, const std::string &status)
+    {
+        using namespace ftxui;
+
+        auto status_value = text (status) | bold;
+        if (status == "Online")
+            {
+                status_value = status_value | color (Color::Green);
+            }
+        else if (status == "Offline")
+            {
+                status_value = status_value | color (Color::Red);
+            }
+        else if (status == "Searching")
+            {
+                status_value = status_value | color (Color::Yellow);
+            }
+        else
+            {
+                status_value = status_value | color (Color::GrayDark);
+            }
+
+        return hbox ({
+                   vbox ({
+                       text ("Selected Node") | dim,
+                       text (node.name) | bold,
+                   }) | flex,
+                   separator (),
+                   vbox ({
+                       text ("Status") | dim,
+                       status_value,
+                   }) | flex,
+                   separator (),
+                   vbox ({
+                       text ("Updated") | dim,
+                       text ("Static sample") | bold,
+                   }) | flex,
+               })
+               | border;
+    }
+
+    static ftxui::Element
+    RenderMetricCard (const std::string &label, const std::string &value)
+    {
+        using namespace ftxui;
+
+        return vbox ({
+                   text (label) | dim,
+                   text (value) | bold,
+               })
+               | border | size (HEIGHT, EQUAL, 4) | flex;
+    }
+
+    static ftxui::Element
+    RenderMetrics (
+        const std::vector<std::pair<std::string, std::string>> &metrics)
+    {
+        using namespace ftxui;
+
+        if (metrics.empty ())
+            {
+                return vbox ({
+                           text ("Metrics") | bold,
+                           paragraph ("No metric fields available.") | dim,
+                       })
+                       | flex;
+            }
+
+        Elements rows;
+        rows.push_back (text ("Metrics") | bold);
+
+        for (std::size_t index = 0U; index < metrics.size (); index += 2U)
+            {
+                Elements columns;
+                columns.push_back (RenderMetricCard (metrics[index].first,
+                                                     metrics[index].second));
+
+                if (index + 1U < metrics.size ())
+                    {
+                        columns.push_back (
+                            RenderMetricCard (metrics[index + 1U].first,
+                                              metrics[index + 1U].second));
+                    }
+                else
+                    {
+                        columns.push_back (filler ());
+                    }
+
+                rows.push_back (hbox (columns));
+            }
+
+        return vbox (rows) | flex;
+    }
+
+    // 过滤后的节点集合。每个元素包含节点名和详情文本。
     std::vector<NodeInfo> nodes_;
+
+    // 完整节点集合，用于搜索过滤。
+    std::vector<NodeInfo> all_nodes_;
 
     // 左侧菜单显示文本缓存。FTXUI Menu 接收的是 string 列表，因此它和
     // nodes_ 分开保存；新增节点时必须与 nodes_ 同步追加。
@@ -157,6 +504,9 @@ class NodePanel
     // 当前选中的节点索引。该变量由 FTXUI Menu 根据键盘事件更新，右侧详情
     // 渲染时使用它读取对应的 NodeInfo。
     int selected_node_ = 0;
+
+    std::string filter_;
+    bool search_active_ = false;
 
     // FTXUI 菜单组件。它持有 node_names_ 和 selected_node_ 的地址，因此这两个
     // 成员必须比 node_menu_ 活得更久；当前成员声明顺序满足这个要求。

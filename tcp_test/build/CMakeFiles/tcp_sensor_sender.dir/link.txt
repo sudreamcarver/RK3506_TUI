@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/tcp_sensor_sender.dir/link.d CMakeFiles/tcp_sensor_sender.dir/src/tcp_sensor_sender.cpp.o CMakeFiles/tcp_sensor_sender.dir/home/carver/RK3506_TUI/rk3506_tcp/src/protocol.cpp.o -o tcp_sensor_sender
