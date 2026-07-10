@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2880" height="1620" viewBox="0 0 2880 1620">
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .title { font: 800 76px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #182331; }
+      .subtitle { font: 500 34px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #475467; }
+      .card { fill: #ffffff; stroke: #d8dee8; stroke-width: 3; rx: 18; }
+      .blue { fill: #eef6ff; stroke: #155a9c; stroke-width: 4; rx: 18; }
+      .green { fill: #effaf5; stroke: #16805b; stroke-width: 4; rx: 18; }
+      .orange { fill: #fff5ed; stroke: #d96b22; stroke-width: 4; rx: 18; }
+      .purple { fill: #f7f5ff; stroke: #6941c6; stroke-width: 4; rx: 18; }
+      .head { font: 800 42px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #182331; }
+      .body { font: 500 29px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #475467; }
+      .small { font: 700 24px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #667085; }
+      .key { font: 800 58px "Cascadia Mono", "Consolas", monospace; fill: #182331; }
+      .token { font: 800 50px "Cascadia Mono", "Consolas", monospace; fill: #ffffff; }
+      .arrow { stroke: #d96b22; stroke-width: 8; fill: none; marker-end: url(#arrow); }
+      .line { stroke: #a7b3c3; stroke-width: 4; fill: none; stroke-dasharray: 12 12; }
+    </style>
+    <marker id="arrow" viewBox="0 0 16 16" refX="14" refY="8" markerWidth="18" markerHeight="18" orient="auto">
+      <path d="M2,2 L14,8 L2,14 Z" fill="#d96b22"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="2880" height="1620"/>
+  <text x="140" y="150" class="title">节点信息介绍图</text>
+  <text x="140" y="215" class="subtitle">节点 key 由 L2 汇聚控制器、L3 采集节点和传感器编号共同组成，保证节点可检索、可更新、可删除。</text>
+
+  <rect x="250" y="330" width="2380" height="220" class="card"/>
+  <text x="440" y="470" class="key">L2-1 / L3-11 / S10007</text>
+
+  <rect x="420" y="640" width="520" height="285" class="blue"/>
+  <rect x="500" y="705" width="250" height="80" rx="16" fill="#155a9c"/>
+  <text x="548" y="760" class="token">L2-1</text>
+  <text x="500" y="835" class="head" style="font-size:34px">第二层汇聚控制器</text>
+  <text x="500" y="885" class="body" style="font-size:25px">来源：FrameHeader.l2_id</text>
+
+  <rect x="1180" y="640" width="520" height="285" class="green"/>
+  <rect x="1260" y="705" width="270" height="80" rx="16" fill="#16805b"/>
+  <text x="1300" y="760" class="token">L3-11</text>
+  <text x="1260" y="835" class="head" style="font-size:34px">第三层采集节点</text>
+  <text x="1260" y="885" class="body" style="font-size:25px">来源：payload.l3_id</text>
+
+  <rect x="1940" y="640" width="520" height="285" class="orange"/>
+  <rect x="2020" y="705" width="300" height="80" rx="16" fill="#d96b22"/>
+  <text x="2055" y="760" class="token">S10007</text>
+  <text x="2020" y="835" class="head" style="font-size:34px">具体传感器编号</text>
+  <text x="2020" y="885" class="body" style="font-size:25px">来源：payload.sensor_id</text>
+
+  <path d="M680 550 V630" class="arrow"/>
+  <path d="M1440 550 V630" class="arrow"/>
+  <path d="M2200 550 V630" class="arrow"/>
+
+  <rect x="300" y="1065" width="1020" height="320" class="purple"/>
+  <text x="380" y="1145" class="head">节点状态如何更新</text>
+  <text x="380" y="1215" class="body">1. 收到 SENSOR_DATA，按完整 key 创建或更新节点。</text>
+  <text x="380" y="1270" class="body">2. 收到 NODE_INFO，补充节点名称、数组名称和单位。</text>
+  <text x="380" y="1325" class="body">3. 收到 L2_HEARTBEAT，刷新 L2 及其下级节点在线状态。</text>
+
+  <rect x="1560" y="1065" width="1020" height="320" class="card"/>
+  <text x="1640" y="1145" class="head">命名规则带来的优势</text>
+  <text x="1640" y="1215" class="body">可检索：TUI 支持按 L2 / L3 / S 快速搜索。</text>
+  <text x="1640" y="1270" class="body">可更新：相同 key 的数据直接刷新最新状态。</text>
+  <text x="1640" y="1325" class="body">可删除：删除后再次收到数据可自动重新出现。</text>
+
+  <path d="M940 782 H1160" class="line"/>
+  <path d="M1700 782 H1920" class="line"/>
+  <text x="980" y="740" class="small">组合</text>
+  <text x="1740" y="740" class="small">定位</text>
+</svg>

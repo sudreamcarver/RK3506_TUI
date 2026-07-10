@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/carver/RK3506_TUI/rk3506_tcp/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

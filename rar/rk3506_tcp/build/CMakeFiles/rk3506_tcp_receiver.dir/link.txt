@@ -1,0 +1,1 @@
+/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot CMakeFiles/rk3506_tcp_receiver.dir/src/tcp_receiver.cpp.o -o rk3506_tcp_receiver  librk3506_tcp_protocol.a

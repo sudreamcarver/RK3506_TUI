@@ -1,0 +1,2 @@
+/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-ar qc librk3506_tcp_protocol.a CMakeFiles/rk3506_tcp_protocol.dir/src/protocol.cpp.o
+/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-ranlib librk3506_tcp_protocol.a

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2880" height="1620" viewBox="0 0 2880 1620">
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .title { font: 800 76px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #182331; }
+      .subtitle { font: 500 34px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #475467; }
+      .card { fill: #ffffff; stroke: #d8dee8; stroke-width: 3; rx: 18; }
+      .card-blue { fill: #eef6ff; stroke: #155a9c; stroke-width: 4; rx: 18; }
+      .card-green { fill: #effaf5; stroke: #16805b; stroke-width: 4; rx: 18; }
+      .card-orange { fill: #fff5ed; stroke: #d96b22; stroke-width: 4; rx: 18; }
+      .head { font: 800 42px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #182331; }
+      .body { font: 500 29px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #475467; }
+      .small { font: 700 24px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #667085; }
+      .chip { fill: #155a9c; }
+      .chipText { font: 800 26px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #ffffff; }
+      .arrow { stroke: #d96b22; stroke-width: 10; fill: none; marker-end: url(#arrow); }
+      .thin { stroke: #a7b3c3; stroke-width: 4; fill: none; stroke-dasharray: 12 12; }
+    </style>
+    <marker id="arrow" viewBox="0 0 16 16" refX="14" refY="8" markerWidth="18" markerHeight="18" orient="auto-start-reverse">
+      <path d="M2,2 L14,8 L2,14 Z" fill="#d96b22"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="2880" height="1620"/>
+  <text x="140" y="150" class="title">整体系统框图</text>
+  <text x="140" y="215" class="subtitle">RK3506 负责集中监控，星闪控制器负责近端一对多采集与汇聚，TUI 完成低资源状态展示。</text>
+
+  <rect x="180" y="330" width="720" height="380" class="card-green"/>
+  <rect x="260" y="382" width="170" height="46" rx="23" class="chip"/>
+  <text x="288" y="414" class="chipText">第三层 L3</text>
+  <text x="260" y="490" class="head">星闪采集节点</text>
+  <text x="260" y="560" class="body">连接 IMU / 电机 / 电流 / 电压 / 电池等传感器</text>
+  <text x="260" y="612" class="body">完成采样、基础校验和轻量数据组织</text>
+  <text x="260" y="665" class="small">节点示例：L3-11 / S10007</text>
+
+  <rect x="1080" y="330" width="720" height="380" class="card-orange"/>
+  <rect x="1160" y="382" width="170" height="46" rx="23" class="chip"/>
+  <text x="1188" y="414" class="chipText">第二层 L2</text>
+  <text x="1160" y="490" class="head">星闪汇聚控制器</text>
+  <text x="1160" y="560" class="body">通过 SLE 接收一个或多个 L3 节点数据</text>
+  <text x="1160" y="612" class="body">补充 l2_id、seq、timestamp、CRC 后上传</text>
+  <text x="1160" y="665" class="small">节点示例：L2-1</text>
+
+  <rect x="1980" y="330" width="720" height="380" class="card-blue"/>
+  <rect x="2060" y="382" width="190" height="46" rx="23" class="chip"/>
+  <text x="2088" y="414" class="chipText">第一层 RK3506</text>
+  <text x="2060" y="490" class="head">集中接收与展示</text>
+  <text x="2060" y="560" class="body">UDP Receiver 解析统一二进制数据帧</text>
+  <text x="2060" y="612" class="body">Node State Store 维护节点状态快照</text>
+  <text x="2060" y="665" class="small">TUI：日志 / 节点列表 / 节点详情</text>
+
+  <path d="M910 520 H1060" class="arrow"/>
+  <path d="M1810 520 H1960" class="arrow"/>
+  <text x="935" y="470" class="small">SLE 星闪</text>
+  <text x="1845" y="470" class="small">UDP 35060</text>
+
+  <rect x="240" y="885" width="2400" height="430" class="card"/>
+  <text x="310" y="965" class="head">系统优势</text>
+
+  <rect x="310" y="1035" width="510" height="190" rx="16" fill="#eef6ff" stroke="#bfd3e7" stroke-width="2"/>
+  <text x="355" y="1105" class="head" style="font-size:34px">全国产链路</text>
+  <text x="355" y="1160" class="body" style="font-size:25px">RK3506 + BearPi H3863</text>
+
+  <rect x="890" y="1035" width="510" height="190" rx="16" fill="#effaf5" stroke="#c7ead9" stroke-width="2"/>
+  <text x="935" y="1105" class="head" style="font-size:34px">星闪一对多</text>
+  <text x="935" y="1160" class="body" style="font-size:25px">L2 统一汇聚多 L3</text>
+
+  <rect x="1470" y="1035" width="510" height="190" rx="16" fill="#fff5ed" stroke="#f2c29b" stroke-width="2"/>
+  <text x="1515" y="1105" class="head" style="font-size:34px">轻量化 TUI</text>
+  <text x="1515" y="1160" class="body" style="font-size:25px">低资源、可滚动、可搜索</text>
+
+  <rect x="2050" y="1035" width="510" height="190" rx="16" fill="#fff7f7" stroke="#f0b9b5" stroke-width="2"/>
+  <text x="2095" y="1105" class="head" style="font-size:34px">2000+ 节点</text>
+  <text x="2095" y="1160" class="body" style="font-size:25px">状态快照稳定展示</text>
+
+  <path d="M540 750 V845 H2340 V750" class="thin"/>
+  <text x="1135" y="1420" class="subtitle">采集侧扩展由星闪承担，上级控制器只处理统一数据协议。</text>
+</svg>

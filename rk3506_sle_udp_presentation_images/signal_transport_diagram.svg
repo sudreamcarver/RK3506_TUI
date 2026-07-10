@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2880" height="1620" viewBox="0 0 2880 1620">
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .title { font: 800 76px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #182331; }
+      .subtitle { font: 500 34px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #475467; }
+      .stage { fill: #ffffff; stroke: #d8dee8; stroke-width: 3; rx: 18; }
+      .stage1 { fill: #effaf5; stroke: #16805b; stroke-width: 4; rx: 18; }
+      .stage2 { fill: #fff5ed; stroke: #d96b22; stroke-width: 4; rx: 18; }
+      .stage3 { fill: #eef6ff; stroke: #155a9c; stroke-width: 4; rx: 18; }
+      .stage4 { fill: #f7f5ff; stroke: #6941c6; stroke-width: 4; rx: 18; }
+      .head { font: 800 40px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #182331; }
+      .body { font: 500 28px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #475467; }
+      .small { font: 700 23px "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif; fill: #667085; }
+      .code { font: 700 25px "Cascadia Mono", "Consolas", monospace; fill: #202630; }
+      .arrow { stroke: #d96b22; stroke-width: 10; fill: none; marker-end: url(#arrow); }
+      .down { stroke: #155a9c; stroke-width: 8; fill: none; marker-end: url(#arrowBlue); }
+      .bar { fill: #202630; rx: 10; }
+      .barText { font: 700 24px "Cascadia Mono", "Consolas", monospace; fill: #ffffff; }
+    </style>
+    <marker id="arrow" viewBox="0 0 16 16" refX="14" refY="8" markerWidth="18" markerHeight="18" orient="auto">
+      <path d="M2,2 L14,8 L2,14 Z" fill="#d96b22"/>
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 16 16" refX="14" refY="8" markerWidth="18" markerHeight="18" orient="auto">
+      <path d="M2,2 L14,8 L2,14 Z" fill="#155a9c"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="2880" height="1620"/>
+  <text x="140" y="150" class="title">信号传输框图</text>
+  <text x="140" y="215" class="subtitle">从 L3 采样到 RK3506 展示，数据经过 SLE 透传、UDP 封装、CRC 校验和状态快照更新。</text>
+
+  <rect x="160" y="350" width="560" height="300" class="stage1"/>
+  <text x="225" y="430" class="head">1. 传感器采样</text>
+  <text x="225" y="505" class="body">IMU / 电机 / 电池 / 电流</text>
+  <text x="225" y="555" class="body">生成采样值、单位、数组 ID</text>
+  <text x="225" y="610" class="small">输出：SleDataArray</text>
+
+  <rect x="850" y="350" width="560" height="300" class="stage2"/>
+  <text x="915" y="430" class="head">2. SLE 透传</text>
+  <text x="915" y="505" class="body">L3 -> L2 星闪链路</text>
+  <text x="915" y="555" class="body">校验 magic / version / CRC</text>
+  <text x="915" y="610" class="small">输出：SleSensorFrame</text>
+
+  <rect x="1540" y="350" width="560" height="300" class="stage3"/>
+  <text x="1605" y="430" class="head">3. UDP 封装</text>
+  <text x="1605" y="505" class="body">L2 补充 l2_id、seq</text>
+  <text x="1605" y="555" class="body">生成 36 字节 FrameHeader</text>
+  <text x="1605" y="610" class="small">输出：UDP datagram</text>
+
+  <rect x="2230" y="350" width="500" height="300" class="stage4"/>
+  <text x="2290" y="430" class="head">4. RK3506 解析</text>
+  <text x="2290" y="505" class="body">校验 payload_crc32</text>
+  <text x="2290" y="555" class="body">更新节点状态快照</text>
+  <text x="2290" y="610" class="small">输出：TUI 展示</text>
+
+  <path d="M730 500 H830" class="arrow"/>
+  <path d="M1420 500 H1520" class="arrow"/>
+  <path d="M2110 500 H2210" class="arrow"/>
+
+  <rect x="255" y="820" width="2370" height="430" class="stage"/>
+  <text x="330" y="900" class="head">应用层 UDP 数据帧</text>
+  <rect x="330" y="965" width="530" height="95" class="bar"/>
+  <rect x="875" y="965" width="350" height="95" class="bar" style="fill:#344054"/>
+  <rect x="1240" y="965" width="500" height="95" class="bar" style="fill:#155a9c"/>
+  <rect x="1755" y="965" width="370" height="95" class="bar" style="fill:#16805b"/>
+  <rect x="2140" y="965" width="400" height="95" class="bar" style="fill:#d96b22"/>
+  <text x="385" y="1025" class="barText">FrameHeader 36B</text>
+  <text x="940" y="1025" class="barText">l2_id / seq</text>
+  <text x="1320" y="1025" class="barText">payload_len</text>
+  <text x="1820" y="1025" class="barText">payload</text>
+  <text x="2205" y="1025" class="barText">payload_crc32</text>
+
+  <path d="M1820 650 V810" class="down"/>
+  <text x="1630" y="755" class="small">L2 统一封装</text>
+
+  <text x="330" y="1145" class="code">key = (FrameHeader.l2_id, payload.l3_id, payload.sensor_id)</text>
+  <text x="330" y="1205" class="body">RK3506 不直接解析星闪底层协议，只处理统一 UDP 数据帧；TUI 只读取状态快照。</text>
+
+  <rect x="520" y="1350" width="1840" height="95" rx="18" fill="#eef6ff" stroke="#bfd3e7" stroke-width="3"/>
+  <text x="610" y="1410" class="head" style="font-size:34px">优势：链路分层清晰，校验完整，接收解析与界面显示解耦，适合大量节点持续上报。</text>
+</svg>

@@ -1,0 +1,1155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RK3506 星闪节点采集方案</title>
+  <style>
+    :root {
+      --ink: #182331;
+      --muted: #667085;
+      --line: #d8dee8;
+      --paper: #f6f8fb;
+      --blue: #155a9c;
+      --green: #16805b;
+      --orange: #d96b22;
+      --red: #b42318;
+      --dark: #202630;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #111722;
+      color: var(--ink);
+      font-family: "Noto Sans CJK SC", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    .deck {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: none;
+      width: 100vw;
+      height: 56.25vw;
+      max-height: 100vh;
+      max-width: 177.7778vh;
+      margin: auto;
+      padding: 58px 72px;
+      background: var(--paper);
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .slide::after {
+      content: "";
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 34px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--green), var(--orange));
+      opacity: 0.7;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 64px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 42px;
+      line-height: 1.18;
+      letter-spacing: 0;
+      color: var(--ink);
+      font-weight: 800;
+      margin-bottom: 26px;
+    }
+
+    h3 {
+      font-size: 25px;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    p,
+    li {
+      font-size: 23px;
+      line-height: 1.45;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 26px;
+    }
+
+    li + li {
+      margin-top: 10px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 42px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--orange);
+    }
+
+    .subtitle {
+      font-size: 27px;
+      line-height: 1.45;
+      color: #344054;
+      margin-top: 24px;
+      max-width: 920px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
+      height: calc(100% - 92px);
+      align-items: stretch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 10px 28px rgba(24, 35, 49, 0.08);
+    }
+
+    .card strong {
+      color: var(--blue);
+    }
+
+    .compact-cards .card {
+      padding: 18px;
+    }
+
+    .compact-cards h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .compact-cards p {
+      font-size: 19px;
+      line-height: 1.35;
+    }
+
+    .image-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      min-height: 0;
+      box-shadow: 0 12px 32px rgba(24, 35, 49, 0.1);
+    }
+
+    .image-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .image-card.contain img {
+      object-fit: contain;
+      background: #ffffff;
+    }
+
+    .hero {
+      background: #ffffff;
+      padding: 0;
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 86px 64px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      background: none;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      max-width: 1080px;
+      color: #174b78;
+    }
+
+    .hero .kicker {
+      margin-bottom: 12px;
+      background: rgba(255, 255, 255, 0.82);
+      padding: 8px 14px;
+      border-radius: 999px;
+    }
+
+    .hero .kicker::before {
+      display: none;
+    }
+
+    .hero .subtitle {
+      max-width: 1120px;
+      margin-top: 12px;
+      font-size: 24px;
+    }
+
+    .tag-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .tag {
+      padding: 9px 14px;
+      border: 1px solid #bfd3e7;
+      border-radius: 999px;
+      background: #edf5ff;
+      color: #164b7a;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .big-number {
+      font-size: 72px;
+      line-height: 1;
+      font-weight: 900;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .metric {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 190px;
+    }
+
+    .metric p {
+      color: var(--muted);
+      font-size: 21px;
+    }
+
+    .focus-figure {
+      display: grid;
+      grid-template-columns: 1.55fr 0.9fr;
+      gap: 28px;
+      height: calc(100% - 92px);
+      align-items: stretch;
+    }
+
+    .wide-figure {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 22px;
+      height: calc(100% - 92px);
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .proof {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .proof b {
+      display: block;
+      font-size: 38px;
+      line-height: 1;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .proof span {
+      font-size: 19px;
+      color: #475467;
+      line-height: 1.35;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: 1fr 70px 1fr 70px 1.1fr;
+      align-items: center;
+      gap: 0;
+      margin-top: 22px;
+    }
+
+    .node {
+      min-height: 168px;
+      border: 2px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      background: #ffffff;
+    }
+
+    .node .label {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .node .title {
+      font-size: 29px;
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .node .text {
+      font-size: 20px;
+      color: #475467;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    .naming-strip {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1.2fr;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .name-token {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .name-token b {
+      display: block;
+      font-size: 25px;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .name-token span {
+      display: block;
+      font-size: 17px;
+      line-height: 1.35;
+      color: #475467;
+    }
+
+    .arrow {
+      color: var(--orange);
+      font-size: 42px;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .protocol {
+      display: grid;
+      grid-template-columns: 0.75fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .frame {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr 1fr;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .frame div {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      padding: 16px;
+      border-radius: 6px;
+      min-height: 94px;
+    }
+
+    .frame b {
+      display: block;
+      font-size: 20px;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .frame span {
+      font-size: 17px;
+      color: #475467;
+      line-height: 1.35;
+    }
+
+    .dark-panel {
+      background: var(--dark);
+      color: #f4f7fb;
+      border-radius: 8px;
+      padding: 24px;
+      min-height: 300px;
+      font-family: "Cascadia Mono", "Consolas", monospace;
+      font-size: 18px;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      border: 1px solid #3a4453;
+    }
+
+    .advantage-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 18px;
+    }
+
+    .advantage {
+      background: #ffffff;
+      border-left: 6px solid var(--green);
+      border-radius: 8px;
+      padding: 24px;
+      min-height: 176px;
+      box-shadow: 0 10px 26px rgba(24, 35, 49, 0.08);
+    }
+
+    .advantage:nth-child(2) {
+      border-left-color: var(--blue);
+    }
+
+    .advantage:nth-child(3) {
+      border-left-color: var(--orange);
+    }
+
+    .advantage:nth-child(4) {
+      border-left-color: var(--red);
+    }
+
+    .advantage p {
+      color: #475467;
+      font-size: 21px;
+    }
+
+    .caption {
+      font-size: 17px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .pager {
+      position: fixed;
+      right: 28px;
+      bottom: 18px;
+      z-index: 20;
+      color: #d0d5dd;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      pointer-events: none;
+    }
+
+    .hint {
+      position: fixed;
+      left: 28px;
+      bottom: 18px;
+      z-index: 20;
+      color: #98a2b3;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      pointer-events: none;
+    }
+
+    .closing {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .closing h1 {
+      max-width: 980px;
+    }
+
+    .closing .grid-3 {
+      width: 100%;
+    }
+
+    @media print {
+      @page {
+        size: 1920px 1080px;
+        margin: 0;
+      }
+
+      html,
+      body {
+        overflow: visible;
+        background: #ffffff;
+      }
+
+      .deck {
+        height: auto;
+      }
+
+      .slide {
+        position: relative;
+        display: block !important;
+        width: 1920px;
+        height: 1080px;
+        max-width: none;
+        max-height: none;
+        padding: 58px 72px;
+        overflow: hidden;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        break-after: page;
+        page-break-after: always;
+        box-shadow: none;
+      }
+
+      h1 {
+        font-size: 64px;
+      }
+
+      h2 {
+        font-size: 42px;
+        margin-bottom: 26px;
+      }
+
+      h3 {
+        font-size: 25px;
+        margin-bottom: 12px;
+      }
+
+      p,
+      li {
+        font-size: 23px;
+        line-height: 1.45;
+      }
+
+      li + li {
+        margin-top: 10px;
+      }
+
+      .kicker {
+        font-size: 18px;
+        margin-bottom: 18px;
+      }
+
+      .subtitle {
+        font-size: 27px;
+        line-height: 1.45;
+        margin-top: 24px;
+      }
+
+      .tag-row {
+        margin-top: 22px;
+      }
+
+      .tag {
+        font-size: 18px;
+        padding: 9px 14px;
+      }
+
+      .hero-content {
+        padding: 0 86px 64px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .hero .subtitle {
+        font-size: 24px;
+      }
+
+      .grid-2,
+      .focus-figure,
+      .wide-figure {
+        height: calc(100% - 92px);
+        gap: 34px;
+      }
+
+      .image-card {
+        overflow: hidden;
+      }
+
+      .image-card img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .grid-3 {
+        gap: 24px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .advantage-list {
+        gap: 22px;
+        margin-top: 18px;
+      }
+
+      .advantage {
+        min-height: 176px;
+        padding: 24px;
+      }
+
+      .advantage p {
+        font-size: 21px;
+      }
+
+      .flow {
+        margin-top: 22px;
+        grid-template-columns: 1fr 70px 1fr 70px 1.1fr;
+      }
+
+      .node {
+        min-height: 168px;
+        padding: 22px;
+      }
+
+      .node .label {
+        font-size: 19px;
+        margin-bottom: 10px;
+      }
+
+      .node .title {
+        font-size: 29px;
+      }
+
+      .node .text {
+        font-size: 20px;
+        margin-top: 10px;
+      }
+
+      .arrow {
+        font-size: 42px;
+      }
+
+      .naming-strip {
+        gap: 14px;
+        margin-top: 22px;
+      }
+
+      .name-token {
+        padding: 16px 18px;
+      }
+
+      .name-token b {
+        font-size: 25px;
+        margin-bottom: 6px;
+      }
+
+      .name-token span {
+        font-size: 17px;
+      }
+
+      .compact-cards .card {
+        padding: 18px;
+      }
+
+      .compact-cards h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+
+      .compact-cards p {
+        font-size: 19px;
+      }
+
+      .frame {
+        gap: 8px;
+      }
+
+      .frame div {
+        min-height: 94px;
+        padding: 16px;
+      }
+
+      .frame b {
+        font-size: 20px;
+      }
+
+      .frame span {
+        font-size: 17px;
+      }
+
+      .dark-panel {
+        min-height: 300px;
+        padding: 24px;
+        font-size: 18px;
+      }
+
+      .proof-strip {
+        gap: 18px;
+      }
+
+      .proof {
+        padding: 20px;
+      }
+
+      .proof b {
+        font-size: 38px;
+      }
+
+      .proof span {
+        font-size: 19px;
+      }
+
+      .big-number {
+        font-size: 72px;
+      }
+
+      .slide:nth-of-type(5) .grid-2 {
+        height: 760px;
+      }
+
+      .slide:nth-of-type(5) .image-card {
+        height: 760px;
+      }
+
+      .slide:nth-of-type(5) .image-card img {
+        height: 736px;
+        max-height: 736px;
+      }
+
+      .slide:nth-of-type(5) .caption {
+        font-size: 17px;
+        margin-top: 8px;
+      }
+
+      .slide:nth-of-type(7) .grid-2 {
+        height: 330px;
+      }
+
+      .slide:nth-of-type(7) .flow {
+        margin-top: 24px !important;
+      }
+
+      .slide:nth-of-type(7) .node {
+        min-height: 135px;
+      }
+
+      .slide:nth-of-type(9) .proof-strip {
+        height: 116px;
+      }
+
+      .slide:nth-of-type(9) .image-card {
+        height: 700px;
+      }
+
+      .slide:nth-of-type(12) .grid-2 {
+        height: 330px;
+      }
+
+      .slide:nth-of-type(12) .advantage-list {
+        margin-top: 20px !important;
+      }
+
+      .slide:nth-of-type(12) .advantage {
+        min-height: 140px;
+      }
+
+      .pager,
+      .hint {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="slide hero active">
+      <img src="images/封面.png" alt="封面">
+      <div class="hero-content">
+        <h1>全国产多节点传感器采集与轻量化监控方案</h1>
+        <p class="subtitle">RK3506 集中监控，星闪完成一对多采集汇聚，TUI 低资源展示；当前已完成 UDP 协议闭环与 2000+ 节点容量验证。</p>
+        <div class="tag-row">
+          <span class="tag">全国产链路</span>
+          <span class="tag">星闪一对多</span>
+          <span class="tag">UDP 轻量上报</span>
+          <span class="tag">TUI 低资源展示</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">核心价值</div>
+      <h2>方案核心优势</h2>
+      <div class="advantage-list">
+        <div class="advantage">
+          <h3>TUI 更省资源</h3>
+          <p>无需浏览器和重型 GUI，适合 RK3506 长时间运行。接收解析与界面解耦，展示稳定、资源占用低。</p>
+        </div>
+        <div class="advantage">
+          <h3>可容纳 2000+ 节点</h3>
+          <p>接收端内存聚合，状态快照定时刷新。实测 2001 行状态记录，包含超过 2000 个传感器节点。</p>
+        </div>
+        <div class="advantage">
+          <h3>基于星闪的全国产方案</h3>
+          <p>RK3506 与 BearPi Pico H3863 星闪控制器组成采集、汇聚、监控闭环，满足国产化方案方向。</p>
+        </div>
+        <div class="advantage">
+          <h3>星闪一对多优势</h3>
+          <p>L2 负责星闪侧多节点汇聚，RK3506 只接收统一 UDP 帧；节点扩展集中在无线侧完成。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">总体架构</div>
+      <h2>三级结构：采集、汇聚、集中监控</h2>
+      <div class="flow">
+        <div class="node">
+          <div class="label">第三层 L3</div>
+          <div class="title">星闪采集节点</div>
+          <div class="text">连接 IMU、电机、电流、电压、温度等传感器，完成采样与基础校验。</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="node">
+          <div class="label">第二层 L2</div>
+          <div class="title">星闪汇聚控制器</div>
+          <div class="text">通过 SLE 汇聚 L3 数据，统一补充 l2_id、seq、CRC 后上报。</div>
+        </div>
+        <div class="arrow">→</div>
+        <div class="node">
+          <div class="label">第一层 RK3506</div>
+          <div class="title">UDP Receiver + TUI</div>
+          <div class="text">解析 UDP 帧、维护状态快照、提供低资源 TUI 看板。</div>
+        </div>
+      </div>
+      <div class="naming-strip">
+        <div class="name-token"><b>L2-1</b><span>第二层星闪汇聚控制器编号，来自 UDP FrameHeader.l2_id。</span></div>
+        <div class="name-token"><b>L3-11</b><span>第三层采集节点编号，来自 SENSOR_DATA / NODE_INFO payload。</span></div>
+        <div class="name-token"><b>S10007</b><span>传感器编号，同一个 L3 下唯一，用于区分 IMU、电机、电池等节点。</span></div>
+        <div class="name-token"><b>L2-1/L3-11/S10007</b><span>完整节点 key，由 l2_id + l3_id + sensor_id 组成，保证节点可检索、可更新、可删除。</span></div>
+      </div>
+      <div class="grid-3 compact-cards" style="margin-top: 20px;">
+        <div class="card">
+          <h3>SLE</h3>
+          <p>L3 到 L2 的近端无线采集链路。</p>
+        </div>
+        <div class="card">
+          <h3>UDP</h3>
+          <p>L2 到 RK3506 的低开销数据报上传。</p>
+        </div>
+        <div class="card">
+          <h3>TUI</h3>
+          <p>RK3506 上低资源、可滚动、可搜索的状态看板。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">实物验证</div>
+      <h2>实物链路验证环境</h2>
+      <div class="grid-2">
+        <div class="image-card contain">
+          <img src="images/硬件连接图.png" alt="硬件连接图">
+        </div>
+        <div class="card">
+          <h3>验证链路</h3>
+          <ul>
+            <li>RK3506 已完成 UDP 接收解析与 TUI 展示。</li>
+            <li>星闪开发板承担 L2/L3 采集与汇聚角色。</li>
+            <li>SLE 负责近端传输，UDP 负责上传 RK3506。</li>
+            <li>当前链路已打通，具备向一对多节点扩展的基础。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">国产平台</div>
+      <h2>RK3506 与星闪控制器组合</h2>
+      <div class="grid-2">
+        <div class="image-card">
+          <img src="images/3506开发板图片背面.jpg" alt="RK3506 开发板">
+        </div>
+        <div class="image-card contain">
+          <img src="images/星闪开发板正面.jpg" alt="星闪开发板">
+        </div>
+      </div>
+      <p class="caption">RK3506 负责集中监控，BearPi Pico H3863 星闪开发板负责采集和汇聚，构成全国产验证链路。</p>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">数据协议</div>
+      <h2>统一 UDP 数据帧：轻量、可校验、可扩展</h2>
+      <div class="protocol">
+        <div class="card">
+          <h3>36 字节 FrameHeader</h3>
+          <ul>
+            <li><strong>l2_id</strong>：L2 身份统一进入帧头。</li>
+            <li><strong>seq</strong>：支持丢包、乱序、重复包判断。</li>
+            <li><strong>payload_len</strong>：业务数据边界明确。</li>
+            <li><strong>payload_crc32</strong>：先校验，后解析。</li>
+          </ul>
+        </div>
+        <div>
+          <div class="frame">
+            <div><b>Header</b><span>magic / version / msg_type / l2_id / seq / timestamp / len / crc32</span></div>
+            <div><b>Payload</b><span>L2_HELLO、L2_HEARTBEAT、NODE_INFO、SENSOR_DATA</span></div>
+            <div><b>State</b><span>按 l2_id + l3_id + sensor_id 生成唯一节点 key</span></div>
+          </div>
+          <div class="dark-panel" style="margin-top: 20px;">key = (FrameHeader.l2_id, payload.l3_id, payload.sensor_id)
+
+SENSOR_DATA:
+  data_type   = IMU / MOTOR / CURRENT / BATTERY ...
+  array_count = scalar: 1, compound: N
+  arrays      = repeated metric arrays</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">星闪优势</div>
+      <h2>星闪一对多：让无线侧承担节点扩展</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>L2 汇聚带来的价值</h3>
+          <ul>
+            <li>RK3506 不直接管理每个无线节点，系统复杂度更低。</li>
+            <li>L2 就近汇聚 L3 数据，统一节点编号和状态。</li>
+            <li>多 L2 扩展时，RK3506 仍沿用同一 UDP 协议。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>星闪链路价值</h3>
+          <ul>
+            <li>适合近距离、低功耗、低时延设备互联。</li>
+            <li>一对多拓扑清晰，适合传感器节点扩展。</li>
+            <li>与 RK3506 组合后，形成国产化采集监控闭环。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flow" style="grid-template-columns: 1fr 50px 1fr 50px 1fr; margin-top: 38px;">
+        <div class="node"><div class="label">L3-A/B/C...</div><div class="title">多传感器采集</div><div class="text">IMU、电机、电池、电流、电压</div></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="label">L2</div><div class="title">星闪一对多汇聚</div><div class="text">统一节点 ID、状态和数据帧</div></div>
+        <div class="arrow">→</div>
+        <div class="node"><div class="label">RK3506</div><div class="title">集中解析展示</div><div class="text">低资源 TUI + 状态文件快照</div></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">TUI 看板</div>
+      <h2>TUI 看板：嵌入式设备上更轻的展示方式</h2>
+      <div class="focus-figure">
+        <div class="image-card contain">
+          <img src="images/2000个节点图.png" alt="2000 个节点 TUI">
+        </div>
+        <div class="card">
+          <h3>为 RK3506 设计</h3>
+          <ul>
+            <li>不依赖浏览器或桌面环境。</li>
+            <li>Receive Log、Nodes、Detail 三区展示。</li>
+            <li>支持滚动、搜索和节点删除。</li>
+            <li>按 L2 心跳显示在线状态。</li>
+            <li>UI 只读状态快照，避免高频刷新压力。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">容量验证</div>
+      <h2>超过 2000 个节点的容量验证</h2>
+      <div class="wide-figure">
+        <div class="proof-strip">
+          <div class="proof"><b>2001</b><span>状态记录行，包含 1 个 L2 与 2000 个传感器节点</span></div>
+          <div class="proof"><b>2000+</b><span>节点列表可滚动、可搜索，适合大规模检索</span></div>
+          <div class="proof"><b>低开销</b><span>接收端内存聚合，TUI 读取快照展示</span></div>
+        </div>
+        <div class="image-card contain">
+          <img src="images/2000个节点图.png" alt="节点容量截图">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">链路闭环</div>
+      <h2>L2 上传日志：SLE payload 到 UDP 帧</h2>
+      <div class="grid-2">
+        <div class="image-card contain">
+          <img src="images/数据串口截图.png" alt="数据串口截图">
+        </div>
+        <div class="card">
+          <h3>已验证的数据路径</h3>
+          <ul>
+            <li>L3 生成 SLE 采样 payload。</li>
+            <li>L2 完成 CRC 校验与 UDP 封装。</li>
+            <li>RK3506 接收并解析二进制数据帧。</li>
+            <li>TUI 实时展示节点状态与数据详情。</li>
+            <li>链路从采集到展示已经闭环。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">软件实现</div>
+      <h2>当前软件模块</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>rk3506_tcp_receiver</h3>
+          <p>UDP 接收解析服务，负责监听 35060、校验帧头、解析数据、维护节点状态。</p>
+        </div>
+        <div class="card">
+          <h3>hellowWorld TUI</h3>
+          <p>低资源状态看板，展示日志、节点列表和详情，支持搜索、滚动和删除。</p>
+        </div>
+        <div class="card">
+          <h3>tcp_sensor_sender</h3>
+          <p>测试发送工具，支持 IMU、MOTOR、BATTERY、CURRENT 等类型，支撑压力验证。</p>
+        </div>
+      </div>
+      <div class="dark-panel" style="margin-top: 30px;">run_host_udp_dashboard.sh
+  -> start rk3506_tcp/build_x86/rk3506_tcp_receiver
+  -> start helloworld/build_x86/hellowWorld
+
+send_local_udp_loop.sh imu 500 0 unique
+send_local_udp_loop.sh motor 500 0 unique</div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">后续扩展</div>
+      <h2>下一步扩展方向</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>链路扩展</h3>
+          <ul>
+            <li>从单 L3 扩展到 L2 对多 L3。</li>
+            <li>支持多个 L2 区域汇聚控制器接入。</li>
+            <li>加入缓存与断链恢复策略。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>功能扩展</h3>
+          <ul>
+            <li>完善 NODE_INFO 自动注册。</li>
+            <li>增加告警、事件和摘要消息。</li>
+            <li>扩展 COMMAND / COMMAND_ACK，实现下发控制。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="advantage-list" style="margin-top: 28px;">
+        <div class="advantage">
+          <h3>保持协议稳定</h3>
+          <p>核心 key、FrameHeader、CRC 不变，扩展只追加 payload 或新消息。</p>
+        </div>
+        <div class="advantage">
+          <h3>保持 UI 轻量</h3>
+          <p>TUI 继续读取状态快照，节点规模扩大时仍保持稳定展示。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="closing">
+        <div class="kicker">总结</div>
+        <h1>用星闪做近端一对多采集，用 RK3506 做集中低资源监控</h1>
+        <div class="grid-3">
+          <div class="card"><h3>国产化</h3><p>RK3506 + 星闪控制器，形成采集、汇聚、展示闭环。</p></div>
+          <div class="card"><h3>可扩展</h3><p>L2 汇聚多 L3，RK3506 只接收统一 UDP 数据帧。</p></div>
+          <div class="card"><h3>轻量稳定</h3><p>TUI 低资源运行，已验证超过 2000 个节点容量。</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="hint">← / → 翻页，Home / End 跳转</div>
+  <div class="pager" id="pager"></div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const pager = document.getElementById("pager");
+    let index = 0;
+
+    function show(next) {
+      index = Math.max(0, Math.min(slides.length - 1, next));
+      slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
+      pager.textContent = `${index + 1} / ${slides.length}`;
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") {
+        event.preventDefault();
+        show(index + 1);
+      } else if (event.key === "ArrowLeft" || event.key === "PageUp") {
+        event.preventDefault();
+        show(index - 1);
+      } else if (event.key === "Home") {
+        event.preventDefault();
+        show(0);
+      } else if (event.key === "End") {
+        event.preventDefault();
+        show(slides.length - 1);
+      }
+    });
+
+    const requestedSlide = Number(new URLSearchParams(window.location.search).get("slide"));
+    show(Number.isInteger(requestedSlide) ? requestedSlide : 0);
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/rk3506_tcp_receiver.dir/link.d CMakeFiles/rk3506_tcp_receiver.dir/src/tcp_receiver.cpp.o -o rk3506_tcp_receiver  librk3506_tcp_protocol.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc librk3506_tcp_protocol.a CMakeFiles/rk3506_tcp_protocol.dir/src/protocol.cpp.o
+/usr/bin/ranlib librk3506_tcp_protocol.a

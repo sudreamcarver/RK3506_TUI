@@ -1,0 +1,4 @@
+/home/carver/RK3506_TUI/rk3506_tcp/build_x86/CMakeFiles/rk3506_tcp_protocol.dir
+/home/carver/RK3506_TUI/rk3506_tcp/build_x86/CMakeFiles/rk3506_tcp_receiver.dir
+/home/carver/RK3506_TUI/rk3506_tcp/build_x86/CMakeFiles/edit_cache.dir
+/home/carver/RK3506_TUI/rk3506_tcp/build_x86/CMakeFiles/rebuild_cache.dir

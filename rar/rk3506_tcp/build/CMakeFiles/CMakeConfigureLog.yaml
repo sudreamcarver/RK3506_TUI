@@ -1,0 +1,1521 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+      - "/bin/"
+    searched_directories:
+      - "/home/carver/.deno/bin/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:207 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The target system is: Linux -  - arm
+      The host system is: Linux - 6.18.36-1-lts - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    searched_directories:
+      - "/home/carver/.deno/bin/gmake"
+      - "/usr/local/sbin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/usr/bin/gmake"
+      - "/usr/lib/jvm/default/bin/gmake"
+      - "/usr/bin/site_perl/gmake"
+      - "/usr/bin/vendor_perl/gmake"
+      - "/usr/bin/core_perl/gmake"
+      - "/home/carver/.local/bin/gmake"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/gmake"
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/gmake"
+      - "/home/carver/.local/OpenOCD/bin/gmake"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/gmake"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/gmake"
+      - "/home/carver/.npm-global/bin/gmake"
+      - "/home/carver/.npm/bin/gmake"
+      - "/home/carver/.deno/bin/make"
+      - "/usr/local/sbin/make"
+      - "/usr/local/bin/make"
+    found: "/usr/bin/make"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/usr/share/cmake/Modules/"
+    found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-g++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/carver/RK3506_TUI/rk3506_tcp/build/CMakeFiles/4.3.4/CompilerIdCXX/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-ar"
+      - "ar"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    found: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-ranlib"
+      - "ranlib"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    found: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-strip"
+      - "strip"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    found: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-strip"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-ld"
+      - "ld"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    found: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-ld"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-nm"
+      - "nm"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    found: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-nm"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-objdump"
+      - "objdump"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    found: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-objdump"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-objcopy"
+      - "objcopy"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    found: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-readelf"
+      - "readelf"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    found: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-readelf"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-dlltool"
+      - "dlltool"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    searched_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/home/carver/.deno/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/usr/local/sbin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/usr/local/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/usr/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/usr/lib/jvm/default/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/usr/bin/site_perl/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/usr/bin/vendor_perl/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/usr/bin/core_perl/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/home/carver/.local/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/home/carver/.local/OpenOCD/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/home/carver/.npm-global/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/home/carver/.npm/bin/arm-buildroot-linux-gnueabihf-dlltool"
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/dlltool"
+      - "/home/carver/.deno/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/bin/dlltool"
+      - "/usr/lib/jvm/default/bin/dlltool"
+      - "/usr/bin/site_perl/dlltool"
+      - "/usr/bin/vendor_perl/dlltool"
+      - "/usr/bin/core_perl/dlltool"
+      - "/home/carver/.local/bin/dlltool"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/dlltool"
+      - "/home/carver/.local/OpenOCD/bin/dlltool"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/dlltool"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/dlltool"
+      - "/home/carver/.npm-global/bin/dlltool"
+      - "/home/carver/.npm/bin/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-addr2line"
+      - "addr2line"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    found: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-tapi"
+      - "tapi"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    searched_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/home/carver/.deno/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/usr/local/sbin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/usr/local/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/usr/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/usr/lib/jvm/default/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/usr/bin/site_perl/arm-buildroot-linux-gnueabihf-tapi"
+      - "/usr/bin/vendor_perl/arm-buildroot-linux-gnueabihf-tapi"
+      - "/usr/bin/core_perl/arm-buildroot-linux-gnueabihf-tapi"
+      - "/home/carver/.local/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/home/carver/.local/OpenOCD/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/home/carver/.npm-global/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/home/carver/.npm/bin/arm-buildroot-linux-gnueabihf-tapi"
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/tapi"
+      - "/home/carver/.deno/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/bin/tapi"
+      - "/usr/lib/jvm/default/bin/tapi"
+      - "/usr/bin/site_perl/tapi"
+      - "/usr/bin/vendor_perl/tapi"
+      - "/usr/bin/core_perl/tapi"
+      - "/home/carver/.local/bin/tapi"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/tapi"
+      - "/home/carver/.local/OpenOCD/bin/tapi"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/tapi"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/tapi"
+      - "/home/carver/.npm-global/bin/tapi"
+      - "/home/carver/.npm/bin/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "arm-buildroot-linux-gnueabihf-gcc-ar"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    searched_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/home/carver/.deno/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/usr/local/sbin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/usr/local/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/usr/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/usr/lib/jvm/default/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/usr/bin/site_perl/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/usr/bin/vendor_perl/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/usr/bin/core_perl/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/home/carver/.local/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/home/carver/.local/OpenOCD/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/home/carver/.npm-global/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/home/carver/.npm/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12.4"
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/home/carver/.deno/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/usr/local/sbin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/usr/local/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/usr/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/usr/lib/jvm/default/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/usr/bin/site_perl/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/usr/bin/vendor_perl/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/usr/bin/core_perl/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/home/carver/.local/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/home/carver/.local/OpenOCD/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/home/carver/.npm-global/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/home/carver/.npm/bin/arm-buildroot-linux-gnueabihf-gcc-ar-12"
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/home/carver/.deno/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/usr/local/sbin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/usr/local/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/usr/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/usr/lib/jvm/default/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/usr/bin/site_perl/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/usr/bin/vendor_perl/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/usr/bin/core_perl/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/home/carver/.local/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/home/carver/.local/OpenOCD/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/home/carver/.npm-global/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+      - "/home/carver/.npm/bin/arm-buildroot-linux-gnueabihf-gcc-ar12"
+    found: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "arm-buildroot-linux-gnueabihf-gcc-ranlib"
+    candidate_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/"
+      - "/home/carver/.deno/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/home/carver/.local/bin/"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/"
+      - "/home/carver/.local/OpenOCD/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/"
+      - "/home/carver/.npm-global/bin/"
+      - "/home/carver/.npm/bin/"
+    searched_directories:
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/home/carver/.deno/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/usr/local/sbin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/usr/local/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/usr/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/usr/lib/jvm/default/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/usr/bin/site_perl/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/usr/bin/vendor_perl/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/usr/bin/core_perl/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/home/carver/.local/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/home/carver/.local/OpenOCD/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/home/carver/.npm-global/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/home/carver/.npm/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12.4"
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/home/carver/.deno/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/usr/local/sbin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/usr/local/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/usr/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/usr/lib/jvm/default/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/usr/bin/site_perl/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/usr/bin/vendor_perl/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/usr/bin/core_perl/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/home/carver/.local/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/home/carver/.local/OpenOCD/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/home/carver/.npm-global/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/home/carver/.npm/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib-12"
+      - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/home/carver/.deno/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/usr/local/sbin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/usr/local/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/usr/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/usr/lib/jvm/default/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/usr/bin/site_perl/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/usr/bin/vendor_perl/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/usr/bin/core_perl/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/home/carver/.local/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/home/carver/.local/OpenOCD/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/home/carver/.local/RISC-V Embedded GCC12/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/home/carver/.local/RISC-V Embedded GCC/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/home/carver/.npm-global/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+      - "/home/carver/.npm/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib12"
+    found: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/carver/.deno/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+        - "/home/carver/.local/bin"
+        - "/home/carver/.local/gcc-arm-10.3-2021.07-x86_64-arm-none-linux-gnueabihf/bin"
+        - "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin"
+        - "/home/carver/.local/OpenOCD/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC12/bin"
+        - "/home/carver/.local/RISC-V Embedded GCC/bin"
+        - "~/.npm-global/bin"
+        - "/home/carver/.npm/bin"
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+      CMAKE_FIND_ROOT_PATH: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/carver/RK3506_TUI/rk3506_tcp/build/CMakeFiles/CMakeScratch/TryCompile-gRb3Ze"
+      binary: "/home/carver/RK3506_TUI/rk3506_tcp/build/CMakeFiles/CMakeScratch/TryCompile-gRb3Ze"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_SYSROOT: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/carver/RK3506_TUI/rk3506_tcp/build/CMakeFiles/CMakeScratch/TryCompile-gRb3Ze'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2671a/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_2671a.dir/build.make CMakeFiles/cmTC_2671a.dir/build
+        make[1]: Entering directory '/home/carver/RK3506_TUI/rk3506_tcp/build/CMakeFiles/CMakeScratch/TryCompile-gRb3Ze'
+        Building CXX object CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o
+        /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot   -v -o CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-g++.br_real
+        Target: arm-buildroot-linux-gnueabihf
+        Configured with: ./configure --prefix=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --sysconfdir=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --enable-plugins --enable-lto --with-gmp=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-mpc=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-mpfr=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-pkgversion='Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty' --with-bugurl=https://gitlab.com/buildroot.org/buildroot/-/issues --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a7 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 12.4.0 (Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty) 
+        COLLECT_GCC_OPTIONS='--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-v' '-o' 'CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv7ve+simd' '-march=armv7ve+simd' '-dumpdir' 'CMakeFiles/cmTC_2671a.dir/'
+         /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/cc1plus -quiet -v -iprefix /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/ -isysroot /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_2671a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-a7 -mfloat-abi=hard -mfpu=neon-vfpv4 -mabi=aapcs-linux -mtls-dialect=gnu -marm -mlibarch=armv7ve+simd -march=armv7ve+simd -version -fstack-protector-strong -fPIE -o /tmp/ccbBzKA2.s
+        GNU C++17 (Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty) version 12.4.0 (arm-buildroot-linux-gnueabihf)
+        	compiled by GNU C version 11.4.0, GMP version 6.3.0, MPFR version 4.1.1, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0"
+        ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/arm-buildroot-linux-gnueabihf"
+        ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/backward"
+        ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include"
+        ignoring nonexistent directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/local/include"
+        ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include-fixed"
+        ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0
+         /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/arm-buildroot-linux-gnueabihf
+         /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/backward
+         /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include
+         /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include-fixed
+         /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include
+         /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/include
+        End of search list.
+        GNU C++17 (Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty) version 12.4.0 (arm-buildroot-linux-gnueabihf)
+        	compiled by GNU C version 11.4.0, GMP version 6.3.0, MPFR version 4.1.1, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 20914b1822e8c0b4e512aad06f136c8a
+        COLLECT_GCC_OPTIONS='--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-v' '-o' 'CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv7ve+simd' '-march=armv7ve+simd' '-dumpdir' 'CMakeFiles/cmTC_2671a.dir/'
+         /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/as -v -march=armv7ve+simd -mfloat-abi=hard -mfpu=neon-vfpv4 -meabi=5 -o CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbBzKA2.s
+        GNU assembler version 2.40 (arm-buildroot-linux-gnueabihf) using BFD version (GNU Binutils) 2.40
+        COMPILER_PATH=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/
+        LIBRARY_PATH=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-v' '-o' 'CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv7ve+simd' '-march=armv7ve+simd' '-dumpdir' 'CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_2671a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2671a.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-g++.br_real
+        COLLECT_LTO_WRAPPER=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/lto-wrapper
+        Target: arm-buildroot-linux-gnueabihf
+        Configured with: ./configure --prefix=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --sysconfdir=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --enable-plugins --enable-lto --with-gmp=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-mpc=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-mpfr=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-pkgversion='Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty' --with-bugurl=https://gitlab.com/buildroot.org/buildroot/-/issues --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a7 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 12.4.0 (Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty) 
+        COMPILER_PATH=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/
+        LIBRARY_PATH=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-v' '-o' 'cmTC_2671a' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv7ve+simd' '-march=armv7ve+simd' '-dumpdir' 'cmTC_2671a.'
+         /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/collect2 -plugin /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/liblto_plugin.so -plugin-opt=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAce3PD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -pie -o cmTC_2671a /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/Scrt1.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crti.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtbeginS.o -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0 -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib -z now -z relro -v CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtendS.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crtn.o
+        collect2 version 12.4.0
+        /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/ld -plugin /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/liblto_plugin.so -plugin-opt=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAce3PD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -pie -o cmTC_2671a /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/Scrt1.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crti.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtbeginS.o -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0 -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib -z now -z relro -v CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtendS.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crtn.o
+        GNU ld (GNU Binutils) 2.40
+        COLLECT_GCC_OPTIONS='--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-v' '-o' 'cmTC_2671a' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv7ve+simd' '-march=armv7ve+simd' '-dumpdir' 'cmTC_2671a.'
+        /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot  -v -Wl,-v CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_2671a
+        make[1]: Leaving directory '/home/carver/RK3506_TUI/rk3506_tcp/build/CMakeFiles/CMakeScratch/TryCompile-gRb3Ze'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0]
+          add: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/arm-buildroot-linux-gnueabihf]
+          add: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/backward]
+          add: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include]
+          add: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include-fixed]
+          add: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include]
+          add: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+        end of search list found
+        collapse include dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/include/c++/12.4.0]
+        collapse include dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/arm-buildroot-linux-gnueabihf] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/include/c++/12.4.0/arm-buildroot-linux-gnueabihf]
+        collapse include dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/backward] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/include/c++/12.4.0/backward]
+        collapse include dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include]
+        collapse include dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include-fixed] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include-fixed]
+        collapse include dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/include]
+        collapse include dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/include] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+        implicit include dirs: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/include/c++/12.4.0;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/include/c++/12.4.0/arm-buildroot-linux-gnueabihf;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/include/c++/12.4.0/backward;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include-fixed;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/include;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/carver/RK3506_TUI/rk3506_tcp/build/CMakeFiles/CMakeScratch/TryCompile-gRb3Ze']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2671a/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_2671a.dir/build.make CMakeFiles/cmTC_2671a.dir/build]
+        ignore line: [make[1]: Entering directory '/home/carver/RK3506_TUI/rk3506_tcp/build/CMakeFiles/CMakeScratch/TryCompile-gRb3Ze']
+        ignore line: [Building CXX object CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot   -v -o CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-g++.br_real]
+        ignore line: [Target: arm-buildroot-linux-gnueabihf]
+        ignore line: [Configured with: ./configure --prefix=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --sysconfdir=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --enable-plugins --enable-lto --with-gmp=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-mpc=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-mpfr=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-pkgversion='Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty' --with-bugurl=https://gitlab.com/buildroot.org/buildroot/-/issues --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a7 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 12.4.0 (Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty) ]
+        ignore line: [COLLECT_GCC_OPTIONS='--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-v' '-o' 'CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv7ve+simd' '-march=armv7ve+simd' '-dumpdir' 'CMakeFiles/cmTC_2671a.dir/']
+        ignore line: [ /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/cc1plus -quiet -v -iprefix /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/ -isysroot /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_2671a.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-a7 -mfloat-abi=hard -mfpu=neon-vfpv4 -mabi=aapcs-linux -mtls-dialect=gnu -marm -mlibarch=armv7ve+simd -march=armv7ve+simd -version -fstack-protector-strong -fPIE -o /tmp/ccbBzKA2.s]
+        ignore line: [GNU C++17 (Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty) version 12.4.0 (arm-buildroot-linux-gnueabihf)]
+        ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.3.0  MPFR version 4.1.1  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0"]
+        ignore line: [ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/arm-buildroot-linux-gnueabihf"]
+        ignore line: [ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/backward"]
+        ignore line: [ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include"]
+        ignore line: [ignoring nonexistent directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0]
+        ignore line: [ /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/arm-buildroot-linux-gnueabihf]
+        ignore line: [ /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/12.4.0/backward]
+        ignore line: [ /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include]
+        ignore line: [ /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/include-fixed]
+        ignore line: [ /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/include]
+        ignore line: [ /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty) version 12.4.0 (arm-buildroot-linux-gnueabihf)]
+        ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.3.0  MPFR version 4.1.1  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 20914b1822e8c0b4e512aad06f136c8a]
+        ignore line: [COLLECT_GCC_OPTIONS='--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-v' '-o' 'CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv7ve+simd' '-march=armv7ve+simd' '-dumpdir' 'CMakeFiles/cmTC_2671a.dir/']
+        ignore line: [ /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/as -v -march=armv7ve+simd -mfloat-abi=hard -mfpu=neon-vfpv4 -meabi=5 -o CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccbBzKA2.s]
+        ignore line: [GNU assembler version 2.40 (arm-buildroot-linux-gnueabihf) using BFD version (GNU Binutils) 2.40]
+        ignore line: [COMPILER_PATH=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/]
+        ignore line: [LIBRARY_PATH=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-v' '-o' 'CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv7ve+simd' '-march=armv7ve+simd' '-dumpdir' 'CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_2671a]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2671a.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/arm-buildroot-linux-gnueabihf-g++.br_real]
+        ignore line: [COLLECT_LTO_WRAPPER=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/lto-wrapper]
+        ignore line: [Target: arm-buildroot-linux-gnueabihf]
+        ignore line: [Configured with: ./configure --prefix=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --sysconfdir=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --enable-plugins --enable-lto --with-gmp=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-mpc=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-mpfr=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host --with-pkgversion='Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty' --with-bugurl=https://gitlab.com/buildroot.org/buildroot/-/issues --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a7 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/work/itrunk/rk3506/rk3506_linux6.1_sdk/buildroot/output/rockchip_rk3506/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 12.4.0 (Buildroot linux-6.1-stan-rkr4.2-1-g5f8a92d2-dirty) ]
+        ignore line: [COMPILER_PATH=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/]
+        ignore line: [LIBRARY_PATH=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot' '-v' '-o' 'cmTC_2671a' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv7ve+simd' '-march=armv7ve+simd' '-dumpdir' 'cmTC_2671a.']
+        link line: [ /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/collect2 -plugin /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/liblto_plugin.so -plugin-opt=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAce3PD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -pie -o cmTC_2671a /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/Scrt1.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crti.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtbeginS.o -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0 -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib -z now -z relro -v CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtendS.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crtn.o]
+          arg [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccAce3PD.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-linux-armhf.so.3] ==> ignore
+          arg [-X] ==> ignore
+          arg [-m] ==> ignore
+          arg [armelf_linux_eabi] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_2671a] ==> ignore
+          arg [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/Scrt1.o] ==> obj [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/Scrt1.o]
+          arg [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crti.o] ==> obj [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crti.o]
+          arg [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtbeginS.o] ==> obj [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtbeginS.o]
+          arg [-L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0] ==> dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0]
+          arg [-L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc] ==> dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc]
+          arg [-L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/lib] ==> dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/lib]
+          arg [-L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib] ==> dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib]
+          arg [-L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib] ==> dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtendS.o] ==> obj [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtendS.o]
+          arg [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crtn.o] ==> obj [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crtn.o]
+        ignore line: [collect2 version 12.4.0]
+        ignore line: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/ld -plugin /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/liblto_plugin.so -plugin-opt=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/12.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAce3PD.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -pie -o cmTC_2671a /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/Scrt1.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crti.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtbeginS.o -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0 -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib -L/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib -z now -z relro -v CMakeFiles/cmTC_2671a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtendS.o /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crtn.o]
+        linker tool for 'CXX': /home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/ld
+        collapse obj [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtbeginS.o] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtbeginS.o]
+        collapse obj [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtendS.o] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtendS.o]
+        collapse library dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0]
+        collapse library dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc]
+        collapse library dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/lib] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/lib]
+        collapse library dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib]
+        collapse library dir [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib] ==> [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/Scrt1.o;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crti.o;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtbeginS.o;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/crtendS.o;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib/crtn.o]
+        implicit dirs: [/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib/gcc;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/lib;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/lib;/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CXX compiler's linker: "/home/carver/.local/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/12.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.40
+...
